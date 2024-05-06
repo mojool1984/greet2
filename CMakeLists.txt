@@ -12,6 +12,10 @@ target_sources(${PROJECT_NAME} PRIVATE include/greet2/greet2.h src/greet2.cpp)
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
 
+if(fmt_FOUND)
+  message("======> fmt found")
+endif()
+
 set(PUBLIC_HEADERS include/greet2/greet2.h)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
